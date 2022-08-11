@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:client": "cd clientapp && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "lint": "concurrently 'npm run lint:client' 'npm run lint:server'"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "husky": "^8.0.1"
+  }
 }
